@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Nav */
+.logo {
+  height: 60px;
+}
+
+.nav-ul li a {
+  margin: 20px;
+  text-decoration: none;
+  color: #7300a0;
+  font-weight: 600;
+  font-size: 17px;
+  transition: all 0.2s;
+}
+
+.nav-ul li a:hover {
+  font-size: 18px;
+  color: #9c00da;
+}
+
+#navButton {
+  display: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #7300a0;
+  border: none;
+  font-size: 25px;
+}
+
+/* End Nav */
+@media (max-width: 992px) {
+  .nav-ul {
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px rgb(175, 175, 175);
+    width: 250px;
+    height: 100%;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+  }
+
+  .nav-ul li {
+    position: relative;
+    margin: 5px;
+  }
+
+  .nav-ul li a {
+    margin: 0;
+    display: block;
+    font-size: 25px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-ul li a i {
+    margin-right: 15px;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px rgb(226, 226, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+  .nav-ul li a:hover {
+    font-size: 25px;
+    background-color: rgb(235, 235, 235);
+  }
+
+  #navButton {
+    display: block;
+  }
+}
