@@ -60,6 +60,22 @@
 }
 /* End of Articles Card */
 
+/* Form */
+.btnSubmitForm {
+  width: 100px;
+  color: white;
+  background-color: #7300a0;
+}
+.btnSubmitForm:hover {
+  color: white;
+  background-color: #9c00da;
+}
+
+.logo-in-form {
+  height: 100px;
+}
+/* End of Form */
+
 @media (max-width: 1200px) {
   .card-content-container {
     height: auto;
