@@ -90,4 +90,17 @@ $(document).ready(function () {
   ).on("input change change", function () {
     $(this).removeClass("is-invalid");
   });
+
+  //----
+
+  for (var i = 1; i <= 13; i++) {
+    var imageContainer = $("<div class='card single-image-container'>");
+    var image = $("<img src='assets/about/" + i + ".jpeg'>");
+    var button = $(
+      "<button class='btn btn-view-profile'>View Profile</button>"
+    );
+    $(imageContainer).append(image);
+    $(imageContainer).append(button);
+    $("#imgContainer").append(imageContainer);
+  }
 });

@@ -50,7 +50,6 @@
 }
 /* End Nav */
 
-
 /* Index */
 .carousel-item img {
   height: 300px;
@@ -125,7 +124,7 @@
   width: 500px;
   pointer-events: none;
   font-size: 12px;
-} 
+}
 
 .btnSubmitForm {
   width: 100px;
@@ -139,6 +138,41 @@
   background-color: #9c00da;
 }
 /* End of Form */
+
+/* About */
+#imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.single-image-container {
+  margin: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: none;
+}
+
+.single-image-container img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.btn-view-profile {
+  width: 100px;
+  margin: auto;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  background-color: #7300a0;
+  color: white;
+}
+
+.btn-view-profile:hover {
+  background-color: #9c00da;
+  color: white;
+}
+/* End of About */
 
 @media (max-width: 1200px) {
   .card-content-container {
