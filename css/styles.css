@@ -5,6 +5,13 @@
 }
 
 /* Nav */
+.nav-container {
+  position: sticky;
+  top: 0;
+  z-index: 99 !important;
+  background-color: white;
+}
+
 .nav-ul {
   z-index: 100 !important;
 }
@@ -42,6 +49,13 @@
   font-size: 25px;
 }
 /* End Nav */
+
+
+/* Index */
+.carousel-item img {
+  height: 300px;
+}
+/* End Index */
 
 /* Articles Card */
 .card-content-container {
