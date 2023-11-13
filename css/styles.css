@@ -311,6 +311,76 @@
 }
 /* End of About */
 
+/* Projects */
+.headlines__preview__tag {
+  font-weight: 700;
+  margin-bottom: 0.25em;
+  font-style: italic;
+  color: #5b00a0;
+}
+
+.headlines__preview__headline {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.headlines__preview__headline a {
+  text-decoration: none;
+  color: black;
+}
+
+.headlines__preview__headline a:hover {
+  text-decoration: underline;
+}
+
+.headlines__preview__content {
+  width: 90%;
+}
+
+.latest__issue__tag {
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-bottom: 3em;
+  font-weight: 600;
+  background: #7300a0;
+  width: fit-content;
+  padding: 0 18px;
+  color: white;
+  border-radius: 15px;
+}
+
+.latest__issue--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1200px;
+}
+
+.latest__issue {
+  border-radius: 1em;
+}
+/* End of Projects */
+
+/* global */
+.tags {
+  background-color: #7300a0;
+  padding: 10px;
+  color: white;
+  font-size: 1rem;
+  width: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor:auto;
+}
+
+.tags:hover {
+  background-color: #63008a;
+  color: rgb(240, 240, 240);
+}
+/* global */
+
 @media (max-width: 520px) {
   .footer-links-container {
     flex-direction: column;

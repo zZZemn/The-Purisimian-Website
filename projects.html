@@ -21,7 +21,9 @@
       <a href="index.html"><img src="assets/logo.png" class="logo" /></a>
       <ul class="nav nav-ul">
         <li class="nav-item">
-          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="index.html" class="nav-active"
+            ><i class="fa-solid fa-house"></i> Home</a
+          >
         </li>
         <li class="nav-item">
           <a href="articles.html"
@@ -29,7 +31,7 @@
           >
         </li>
         <li class="nav-item">
-          <a href="projects.html" class="nav-active"
+          <a href="projects.html"
             ><i class="fa-solid fa-diagram-project"></i> Projects</a
           >
         </li>
@@ -46,10 +48,22 @@
         <i class="fa-solid fa-bars" id="navButtonIcon"></i>
       </button>
     </nav>
+
+    <section class="latest__issue--section m-5">
+      <div class="btn tags mb-5">LATEST ISSUE</div>
+
+      <div class="latest__issue--container">
+        <embed
+          src="assets/projects/tabloid.pdf"
+          width="80%"
+          height="100%"
+          class="latest__issue"
+        />
+      </div>
+    </section>
     <script
       src="https://kit.fontawesome.com/c6c8edc460.js"
       crossorigin="anonymous"
     ></script>
-    <script src="javascript/app.js"></script>
   </body>
 </html>
