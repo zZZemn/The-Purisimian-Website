@@ -4,7 +4,7 @@ const nextButton = document.querySelector(".carousel__button--right");
 const prevButton = document.querySelector(".carousel__button--left");
 
 const slideWidth = slides[0].getBoundingClientRect().width;
-const autoSlideInterval = 5000; // Set the interval for auto-sliding in milliseconds
+const autoSlideInterval = 5000;
 let currentIndex = 0;
 let timer;
 
