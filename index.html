@@ -13,8 +13,16 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>The Purishmian</title>
   </head>
@@ -53,7 +61,7 @@
       </button>
     </nav>
 
-    <div
+    <!-- <div
       id="carouselExampleIndicators"
       class="carousel slide"
       data-ride="carousel"
@@ -108,7 +116,104 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div>
+    </div> -->
+
+    <section class="carousel__section container">
+      <div class="carousel">
+        <button class="carousel__button carousel__button--left is-hidden">
+          <img src="assets/carousel/arrow-left.svg" alt="" />
+        </button>
+
+        <div class="carousel__track-container">
+          <ul class="carousel__track">
+            <li class="carousel__slide current-slide">
+              <div class="carousel__image-container">
+                <a href="news-article1.html">
+                  <img
+                    class="carousel__image"
+                    src="assets/carousel/headline.jpeg"
+                    alt=""
+                  />
+                </a>
+                <div class="carousel__headline-container">
+                  <a href="news-article1.html"
+                    >SGS and CBMA Reign as Mr. and Ms. CPC 2023</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-data-container">
+                <div class="carousel__by-line-container">
+                  <span class="italic">by</span>
+                  <span class="by-name">Athena Marian Lariza</span>
+                  &centerdot;
+                  <span id="upload-date">October 9, 2023</span>
+                </div>
+                <div class="carousel__caption-container">
+                  With so much anticipation, Purisimians filled the San Lorenzo
+                  Event Center on October 6 to witness The Big Night of the
+                  Search for Mr. and Miss CPC 2023 as part of the 76th Grand
+                  Intramurals of Colegio de la Purisima Concepcion.
+                </div>
+              </div>
+            </li>
+            <li class="carousel__slide">
+              <div class="carousel__image-container">
+                <a href="news-article2.html">
+                  <img
+                    class="carousel__image"
+                    src="assets/carousel/headline2.jpeg"
+                    alt=""
+                  />
+                </a>
+                <div class="carousel__headline-container one-line">
+                  <a href="news-article2.html"> (HEADLINE) </a>
+                </div>
+              </div>
+              <div class="carousel-data-container">
+                <div class="carousel__by-line-container">
+                  <span class="italic">by</span>
+                  <span class="by-name">(Name of Writer)</span>
+                  &centerdot; <span id="upload-date">(Date)</span>
+                </div>
+                <div class="carousel__caption-container">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+              </div>
+            </li>
+            <li class="carousel__slide">
+              <div class="carousel__image-container">
+                <a href="news-article3.html">
+                  <img
+                    class="carousel__image"
+                    src="assets/carousel/headline3.jpg"
+                    alt=""
+                  />
+                </a>
+                <div class="carousel__headline-container one-line">
+                  <a href="news-article3.html"> (HEADLINE) </a>
+                </div>
+              </div>
+              <div class="carousel-data-container">
+                <div class="carousel__by-line-container">
+                  <span class="italic">ni</span>
+                  <span class="by-name">(Name of Writer)</span>
+                  &centerdot; <span id="upload-date"> Date</span>
+                </div>
+                <div class="carousel__caption-container">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <button class="carousel__button carousel__button--right">
+          <img src="assets/carousel/arrow-right.svg" alt="" />
+        </button>
+      </div>
+    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -129,6 +234,8 @@
       integrity="sha384-XpOMT9o53maXYMQ8V21u6JdNxEJ2PdI7y3hjD6v9LZztDBKSb6U5trDKGU70zZ"
       crossorigin="anonymous"
     ></script>
+
     <script src="javascript/app.js"></script>
+    <script src="javascript/carousel.js"></script>
   </body>
 </html>
