@@ -192,7 +192,7 @@
   width: 200px;
 }
 
-.footer .footer-links-container a {
+.footer a {
   text-decoration: none;
   color: white;
 }
@@ -285,6 +285,10 @@
 .btnSubmitForm:hover {
   color: white;
   background-color: #9c00da;
+}
+
+.contacts-links-container {
+  width: 100%;
 }
 /* End of Form */
 
