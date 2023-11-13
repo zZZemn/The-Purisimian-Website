@@ -55,6 +55,18 @@
   height: 300px;
 }
 
+.search-container {
+  position: relative;
+}
+
+.search-container button {
+  position: absolute;
+}
+
+.search-container input {
+  padding-left: 35px;
+}
+
 /* Carousel Styles */
 .carousel {
   position: relative;
@@ -372,7 +384,7 @@
   transform: translateX(-50%);
   font-weight: 600;
   letter-spacing: 1px;
-  cursor:auto;
+  cursor: auto;
 }
 
 .tags:hover {
