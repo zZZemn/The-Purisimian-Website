@@ -322,6 +322,10 @@
     padding: 10px 20px;
     font-size: 12px;
   }
+
+  .footer img {
+    width: 150px;
+  }
 }
 
 @media (max-width: 1200px) {
