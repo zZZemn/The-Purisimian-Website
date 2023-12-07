@@ -103,4 +103,14 @@ $(document).ready(function () {
     $(imageContainer).append(button);
     $("#imgContainer").append(imageContainer);
   }
+
+  $(".btn-login").hover(
+    function () {
+      $(".btn-login span").css("opacity", 1);
+      $(".btn-login").css("color", 'white');
+    },
+    function () {
+      $(".btn-login span").css("opacity", 0);
+    }
+  );
 });
