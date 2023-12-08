@@ -64,10 +64,17 @@ $db = new admin_class();
                                     <button class="btn btn-danger btnDelete" data-id="<?= $article['ID'] ?>"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
-                    <?php
+                        <?php
                             $count++;
                         }
                     } else {
+                        ?>
+                        <tr>
+                            <td colspan="6">
+                                <center>No Article Found.</center>
+                            </td>
+                        </tr>
+                    <?php
                     }
                     ?>
                 </tbody>

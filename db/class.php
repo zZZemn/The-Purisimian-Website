@@ -27,6 +27,15 @@ class admin_class extends db_connect
         }
     }
 
+    public function getArticlesIndividual($id)
+    {
+        $query = $this->conn->prepare("SELECT * FROM `articles` WHERE `ID` = '$id'");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
     public function addNewArticle($post, $file)
     {
         $category = $post['articleCategory'];
@@ -66,9 +75,17 @@ class admin_class extends db_connect
 
     public function deleteArticle($id)
     {
-        $query = $this->conn->prepare("DELETE FROM `articles` WHERE `ID` = '$id'");
-        if ($query->execute()) {
-            return 200;
+        $getArticle = $this->getArticlesIndividual($id);
+        if ($getArticle->num_rows > 0) {
+            $article = $getArticle->fetch_assoc();
+            $photoName = $article['PHOTO'];
+            $fileToDelete = '../assets/articles/' . $photoName;
+            $query = $this->conn->prepare("DELETE FROM `articles` WHERE `ID` = '$id'");
+            if (unlink($fileToDelete) && $query->execute()) {
+                return 200;
+            } else {
+                return 400;
+            }
         } else {
             return 400;
         }

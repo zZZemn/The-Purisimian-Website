@@ -29,6 +29,8 @@ $(document).ready(function () {
           alert("alert-success", "Article Added!");
           $("#AddModal").modal("hide");
           window.location.reload();
+        } else {
+          alert("alert-danger", response);
         }
       },
     });
