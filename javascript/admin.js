@@ -57,13 +57,13 @@ $(document).ready(function () {
       processData: false,
       success: function (response) {
         console.log(response);
-        // if (response == "200") {
-        //   alert("alert-success", "Article Added!");
-        //   $("#AddModal").modal("hide");
-        //   window.location.reload();
-        // } else {
-        //   alert("alert-danger", response);
-        // }
+        if (response == "200") {
+          alert("alert-success", "Article Edited!");
+          $("#EditModal").modal("hide");
+          window.location.reload();
+        } else {
+          alert("alert-danger", response);
+        }
       },
     });
   });

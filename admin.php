@@ -39,10 +39,10 @@ $db = new admin_class();
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Photo</th>
                         <th>Category</th>
                         <th>Title</th>
                         <th>Article</th>
-                        <th>Photo</th>
                         <th>Action</th>
                     </tr>
                 </thead>
