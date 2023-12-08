@@ -16,6 +16,8 @@ if (isset($_POST['submitType'])) {
         }
     } elseif ($_POST['submitType'] == 'AddArticle') {
         echo $db->addNewArticle($_POST, $_FILES['articlePhoto']);
+    } elseif ($_POST['submitType'] == 'EditArticle') {
+        echo $db->editArticle($_POST, $_FILES['articlePhoto']);
     } elseif ($_POST['submitType'] == 'DeleteArticle') {
         $id = $_POST['id'];
         echo $db->deleteArticle($id);

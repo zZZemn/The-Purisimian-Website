@@ -60,7 +60,8 @@ $db = new admin_class();
                                 <td><?= $article['TITLE'] ?></td>
                                 <td><?= $article['ARTICLE'] ?></td>
                                 <td>
-                                    <button class="btn btn-dark btnEdit" data-id="<?= $article['ID'] ?>"><i class="fa-regular fa-pen-to-square"></i></button>
+                                    <button class="btn btn-dark btnEdit" data-id="<?= $article['ID'] ?>" data-category="<?= $article['CATEGORY'] ?>" data-title="<?= $article['TITLE'] ?>" data-article="<?= $article['ARTICLE'] ?>">
+                                        <i class="fa-regular fa-pen-to-square"></i></button>
                                     <button class="btn btn-danger btnDelete" data-id="<?= $article['ID'] ?>"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </tr>
@@ -121,6 +122,45 @@ $db = new admin_class();
         </div>
     </div>
     <!-- End of Add Modal -->
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="EditModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="EditModalLabel">Edit article</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="frmEditArticle" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div>
+                            <label for="EditArticleCategory">Category:</label>
+                            <input type="text" id="EditArticleCategory" name="EditArticleCategory" class="form-control mt-1" required>
+                        </div>
+                        <div class="mt-3">
+                            <label for="EditArticleTitle">Title:</label>
+                            <input type="text" id="EditArticleTitle" name="EditArticleTitle" class="form-control mt-1" required>
+                        </div>
+                        <div class="mt-3">
+                            <label for="EditArticle">Article:</label>
+                            <textarea type="text" id="EditArticle" name="EditArticle" class="form-control mt-1" required></textarea>
+                        </div>
+                        <div class="mt-3">
+                            <label for="articlePhoto">Change Photo:</label>
+                            <input type="file" id="articlePhoto" name="articlePhoto" class="form-control mt-1">
+                        </div>
+                        <input type="hidden" name="articleId" id="articleId" value="">
+                        <input type="hidden" name="submitType" value="EditArticle">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="btnAddArticle">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End of Edit Modal -->
 
     <!-- Delete Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">

@@ -37,6 +37,36 @@ $(document).ready(function () {
   });
 
   //   Edit Article
+  $(".btnEdit").click(function (e) {
+    e.preventDefault();
+    $("#EditArticleCategory").val($(this).data("category"));
+    $("#EditArticleTitle").val($(this).data("title"));
+    $("#EditArticle").val($(this).data("article"));
+    $("#articleId").val($(this).data("id"));
+    $("#EditModal").modal("show");
+  });
+
+  $("#frmEditArticle").submit(function (e) {
+    e.preventDefault();
+    var formData = new FormData($(this)[0]);
+    $.ajax({
+      type: "POST",
+      url: "endpoints/form-submit.php",
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function (response) {
+        console.log(response);
+        // if (response == "200") {
+        //   alert("alert-success", "Article Added!");
+        //   $("#AddModal").modal("hide");
+        //   window.location.reload();
+        // } else {
+        //   alert("alert-danger", response);
+        // }
+      },
+    });
+  });
 
   //   Delete Article
   $(".btnDelete").click(function (e) {

@@ -73,6 +73,59 @@ class admin_class extends db_connect
         }
     }
 
+    public function editArticle($post, $file)
+    {
+        $articleId = $post['articleId'];
+        $EditArticle = $post['EditArticle'];
+        $EditArticleTitle = $post['EditArticleTitle'];
+        $EditArticleCategory = $post['EditArticleCategory'];
+
+        $getArticle = $this->getArticlesIndividual($articleId);
+        if ($getArticle->num_rows > 0) {
+            $article = $getArticle->fetch_assoc();
+            $articleCurrentPhoto = $article['PHOTO'];
+
+            $photoId = mt_rand(10000, 99999);
+            if (!empty($_FILES['articlePhoto']['size'])) {
+                $file_name = $file['name'];
+                $file_tmp = $file['tmp_name'];
+                $extension = pathinfo($file_name, PATHINFO_EXTENSION);
+                if ($extension === 'jpg' || $extension === 'jpeg' || $extension === 'png') {
+                    $destinationDirectory = '../assets/articles/';
+                    $newFileName = $photoId . '.' . $extension;
+                    $destination = $destinationDirectory . $newFileName;
+                    $fileToDelete = '../assets/articles/' . $articleCurrentPhoto;
+
+                    if (is_uploaded_file($file_tmp)) {
+                        if (move_uploaded_file($file_tmp, $destination) && unlink($fileToDelete)) {
+                            $query = $this->conn->prepare("UPDATE `articles` SET `CATEGORY`='$EditArticleCategory',`TITLE`='$EditArticleTitle',`ARTICLE`='$EditArticle',`PHOTO`='$newFileName' WHERE `ID` = '$articleId'");
+                            if ($query->execute()) {
+                                return 200;
+                            } else {
+                                return 405;
+                            }
+                        } else {
+                            return 'Uploading file unsuccessfull';
+                        }
+                    } else {
+                        return "Error: File upload failed or file not found.";
+                    }
+                } else {
+                    return 'Invalid file type';
+                }
+            } else {
+                $query = $this->conn->prepare("UPDATE `articles` SET `CATEGORY`='$EditArticleCategory',`TITLE`='$EditArticleTitle',`ARTICLE`='$EditArticle' WHERE `ID` = '$articleId'");
+                if ($query->execute()) {
+                    return 200;
+                } else {
+                    return 405;
+                }
+            }
+        } else {
+            return 'No article found!';
+        }
+    }
+
     public function deleteArticle($id)
     {
         $getArticle = $this->getArticlesIndividual($id);
