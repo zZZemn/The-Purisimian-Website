@@ -17,4 +17,60 @@ class admin_class extends db_connect
             return $result;
         }
     }
+
+    public function getArticles()
+    {
+        $query = $this->conn->prepare("SELECT * FROM `articles`");
+        if ($query->execute()) {
+            $result = $query->get_result();
+            return $result;
+        }
+    }
+
+    public function addNewArticle($post, $file)
+    {
+        $category = $post['articleCategory'];
+        $title = $post['articleTitle'];
+        $article = $post['article'];
+
+        $photoId = mt_rand(10000, 99999);
+        if (!empty($_FILES['articlePhoto']['size'])) {
+            $file_name = $file['name'];
+            $file_tmp = $file['tmp_name'];
+            $extension = pathinfo($file_name, PATHINFO_EXTENSION);
+            if ($extension === 'jpg' || $extension === 'jpeg' || $extension === 'png') {
+                $destinationDirectory = '../assets/articles/';
+                $newFileName = $photoId . '.' . $extension;
+                $destination = $destinationDirectory . $newFileName;
+                if (is_uploaded_file($file_tmp)) {
+                    if (move_uploaded_file($file_tmp, $destination)) {
+                        $query = $this->conn->prepare("INSERT INTO `articles`(`CATEGORY`, `TITLE`, `ARTICLE`, `PHOTO`) VALUES ('$category','$title','$article','$newFileName')");
+                        if ($query->execute()) {
+                            return 200;
+                        } else {
+                            return 405;
+                        }
+                    } else {
+                        return 'Uploading file unsuccessfull';
+                    }
+                } else {
+                    return "Error: File upload failed or file not found.";
+                }
+            } else {
+                return 'Invalid file type';
+            }
+        } else {
+            return 'File is empty';
+        }
+    }
+
+    public function deleteArticle($id)
+    {
+        $query = $this->conn->prepare("DELETE FROM `articles` WHERE `ID` = '$id'");
+        if ($query->execute()) {
+            return 200;
+        } else {
+            return 400;
+        }
+    }
 }

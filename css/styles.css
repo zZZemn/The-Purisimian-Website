@@ -384,6 +384,27 @@
 }
 /* End of Login */
 
+/* Admin */
+.admin-main-container .nav-item .active{
+  background-color: #5b00a0;
+}
+
+.article-photo {
+  height: 70px;
+}
+
+.btn-open-add-article-modal {
+  background-color: #5b00a0;
+  border: none;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-weight: 600;
+}
+/* End of Admin */
+
 /* global */
 .tags {
   background-color: #7300a0;
@@ -435,6 +456,7 @@
 
 .alert {
   position: fixed;
+  z-index: 10000000;
   top: 0;
   margin-left: 50%;
   transform: translateX(-50%);

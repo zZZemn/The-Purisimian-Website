@@ -14,5 +14,14 @@ if (isset($_POST['submitType'])) {
         } else {
             echo 400;
         }
+    } elseif ($_POST['submitType'] == 'AddArticle') {
+        echo $db->addNewArticle($_POST, $_FILES['articlePhoto']);
+    } elseif ($_POST['submitType'] == 'DeleteArticle') {
+        $id = $_POST['id'];
+        echo $db->deleteArticle($id);
+    } else {
+        echo 'none1';
     }
+} else {
+    echo 'none';
 }
