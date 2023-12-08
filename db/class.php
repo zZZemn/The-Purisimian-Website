@@ -53,7 +53,8 @@ class admin_class extends db_connect
                 $destination = $destinationDirectory . $newFileName;
                 if (is_uploaded_file($file_tmp)) {
                     if (move_uploaded_file($file_tmp, $destination)) {
-                        $query = $this->conn->prepare("INSERT INTO `articles`(`CATEGORY`, `TITLE`, `ARTICLE`, `PHOTO`) VALUES ('$category','$title','$article','$newFileName')");
+                        $query = $this->conn->prepare("INSERT INTO `articles`(`CATEGORY`, `TITLE`, `ARTICLE`, `PHOTO`) VALUES (?, ?, ?, ?)");
+                        $query->bind_param("ssss", $category, $title, $article, $newFileName);
                         if ($query->execute()) {
                             return 200;
                         } else {
@@ -98,7 +99,9 @@ class admin_class extends db_connect
 
                     if (is_uploaded_file($file_tmp)) {
                         if (move_uploaded_file($file_tmp, $destination) && unlink($fileToDelete)) {
-                            $query = $this->conn->prepare("UPDATE `articles` SET `CATEGORY`='$EditArticleCategory',`TITLE`='$EditArticleTitle',`ARTICLE`='$EditArticle',`PHOTO`='$newFileName' WHERE `ID` = '$articleId'");
+                            $query = $this->conn->prepare("UPDATE `articles` SET `CATEGORY`=?, `TITLE`=?, `ARTICLE`=?, `PHOTO`=? WHERE `ID` = ?");
+                            $query->bind_param("ssssi", $EditArticleCategory, $EditArticleTitle, $EditArticle, $newFileName, $articleId);
+
                             if ($query->execute()) {
                                 return 200;
                             } else {
@@ -114,7 +117,8 @@ class admin_class extends db_connect
                     return 'Invalid file type';
                 }
             } else {
-                $query = $this->conn->prepare("UPDATE `articles` SET `CATEGORY`='$EditArticleCategory',`TITLE`='$EditArticleTitle',`ARTICLE`='$EditArticle' WHERE `ID` = '$articleId'");
+                $query = $this->conn->prepare("UPDATE `articles` SET `CATEGORY`=?, `TITLE`=?, `ARTICLE`=? WHERE `ID` = ?");
+                $query->bind_param("sssi", $EditArticleCategory, $EditArticleTitle, $EditArticle, $articleId);
                 if ($query->execute()) {
                     return 200;
                 } else {
